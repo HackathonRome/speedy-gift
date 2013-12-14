@@ -20,3 +20,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem "koala", "~> 1.8.0rc1"
+gem 'nokogiri'
+
+group :development do
+  gem 'pry-rails'
+end
