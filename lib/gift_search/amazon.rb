@@ -2,10 +2,8 @@ require_relative '../gift_search'
 
 module GiftSearch
   class Amazon < Base
-    def execute
-      noko.css('#rightResultsATF .prod').map do |product|
-        extract_product_data(product)
-      end
+    def list_selector
+      '#rightResultsATF .prod'
     end
 
     def extract_product_data(node)

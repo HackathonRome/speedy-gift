@@ -2,10 +2,8 @@ require_relative '../gift_search'
 
 module GiftSearch
   class Pixmania < Base
-    def execute
-      noko.css('.resultList article').map do |product|
-        extract_product_data(product)
-      end
+    def list_selector
+      '.resultList article'
     end
 
     def extract_product_data(node)

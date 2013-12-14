@@ -2,10 +2,8 @@ require_relative '../gift_search'
 
 module GiftSearch
   class GiftsCom < Base
-    def execute
-      noko.css('#srpProd li').map do |product|
-        extract_product_data(product)
-      end
+    def list_selector
+      '#srpProd li'
     end
 
     def extract_product_data(node)
