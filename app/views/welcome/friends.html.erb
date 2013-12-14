@@ -1,12 +1,12 @@
 <% @friends.each do |friend| %>
   <div class="friend media">
     <div class="pull-left">
-      <img class="media-object" src="<%= friend['picture']['data']['url'] %>" alt="friend photo" />
+      <img class="media-object img-thumbnail" src="<%= friend['picture']['data']['url'] %>" alt="friend photo" />
     </div>
 
     <div class="media-body">
       <h4 class="media-heading"><%= friend["name"] %></h4>
-      <%= link_to "Look for gifts!", gifts_path(friend_id: friend['id']) %>
+      <a href="<%= gifts_path(friend_id: friend['id']) %>" class="btn btn-success"><span class="glyphicon glyphicon-heart"></span> Look for gifts!</a>
     </div>
   </div>
 <% end %>
