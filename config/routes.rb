@@ -6,7 +6,7 @@ Giftz::Application.routes.draw do
   get 'friends' => 'welcome#friends', as: :friends
   get 'friend/:id' => 'welcome#friend', as: :friend
 
-  resources :gifts, only: [:index] do
+  resources :gifts, only: [:index], path: 'gifts/:friend_id' do
     get :random, on: :collection
   end
 
