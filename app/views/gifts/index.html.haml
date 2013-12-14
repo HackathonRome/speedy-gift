@@ -4,6 +4,9 @@
       I've found some gifts for #{@friend.full_name}
       %small.text-muted (searching for "#{@gift_keyword}")
 
+  .clearfix
+    = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-large btn-success'
+
   .gift-list= render collection: @gifts, partial: 'gift'
 
 - else
