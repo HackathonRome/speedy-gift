@@ -6,7 +6,7 @@
 
     <div class="media-body">
       <h4 class="media-heading"><%= friend["name"] %></h4>
-      <%= link_to "Look for gifts!", gifts_path(friend['id']) %>
+      <%= link_to "Look for gifts!", gifts_path(friend_id: friend['id']) %>
     </div>
   </div>
 <% end %>
