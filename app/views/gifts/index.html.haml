@@ -5,6 +5,7 @@
       %small.text-muted (searching for "#{@gift_keyword}")
 
   .clearfix.try-again
+    = link_to "Another Friend", friends_path, class: 'btn btn-lg btn-info mind-blown'
     = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-lg btn-success mind-blown'
 
   .gift-list= render collection: @gifts, partial: 'gift'
