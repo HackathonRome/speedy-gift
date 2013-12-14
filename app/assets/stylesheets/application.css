@@ -50,16 +50,30 @@ a.gift {
   width: 240px;
   padding-left: 10px;
   padding-right: 10px;
-  height: 350px;
+  height: 280px;
   float: left;
   text-align: center;
+  color: rgb(80, 80, 80);
+  text-decoration: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-bottom: 20px;
+}
+a.gift:hover {
+  text-decoration: none;
+  color: rgb(50, 50, 50);
+  border: 1px solid rgb(200, 200, 200);
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .gift img {
   display: block;
   margin: 0 auto;
+  box-shadow: 1px 1px 2px #000;
 }
 .gift h4 {
   height: 50px;
+  margin-bottom: 15px;
 }
 .gift .price {
   text-align: center;
