@@ -10,7 +10,7 @@ set :scm, :git
 # set :pty, true
 
 # set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{tmp bin log  vendor/bundle public/system}
+set :linked_dirs, %w{tmp bin log  vendor/bundle public/system db/production.sqlite3}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
