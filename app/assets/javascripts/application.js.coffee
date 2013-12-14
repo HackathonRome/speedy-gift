@@ -5,5 +5,5 @@
 
 $ ->
   $('#overlay').fadeOut(300);
-  $('a').click (e) ->
+  $('.friend a, .mind-blown').click (e) ->
     $('#overlay').fadeIn(300);
