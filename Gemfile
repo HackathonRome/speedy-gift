@@ -5,7 +5,8 @@ gem 'rails', '4.0.2'
 gem 'haml-rails'
 gem 'hpricot'
 gem 'ruby_parser'
-gem 'sqlite3'
+gem 'sqlite3', group: 'development'
+gem 'pg', group: 'production'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'parallel'
@@ -27,5 +28,9 @@ gem "koala", "~> 1.8.0rc1"
 gem 'nokogiri'
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
   gem 'pry-rails'
 end
