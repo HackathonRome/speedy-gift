@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def friends
-    koala.get_connections('me', 'friends?fields=id,name,picture.type(small)')
+    f = koala.get_connections('me', 'friends?fields=id,name,picture.type(small)')
   end
 
   def friend(id)

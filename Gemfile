@@ -28,5 +28,9 @@ gem "koala", "~> 1.8.0rc1"
 gem 'nokogiri'
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
   gem 'pry-rails'
 end
