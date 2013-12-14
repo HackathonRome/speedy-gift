@@ -5,7 +5,13 @@
       %small.text-muted (searching for "#{@gift_keyword}")
 
   .clearfix.try-again
-    = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-lg btn-success'
+    = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-lg btn-success mind-blown'
+
+  .gift-list= render collection: @gifts, partial: 'gift'
+
+- else
+
+  %div{style: 'text-align: center'}
 
   .gift-list= render collection: @gifts, partial: 'gift'
 
@@ -19,4 +25,4 @@
     %div= image_tag asset_path('drunk-santa.jpg')
     .try-again
       Please
-      = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-lg btn-success'
+      = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-lg btn-success mind-blown'
