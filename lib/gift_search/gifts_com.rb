@@ -13,7 +13,8 @@ module GiftSearch
         image_url: node.css('.prodCont img').attr('src').value,
         url: 'http://gifts.com' + node.css('.prodCont a').attr('href').value,
         title: node.css('.prodName a').text,
-        price: node.css('.priceField a').text.split(' at ').first.to_f
+        price: node.css('.priceField a').text.split(' at ').first.to_f,
+        source: :gifts_com
       }
     end
 
