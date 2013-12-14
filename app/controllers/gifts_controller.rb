@@ -1,4 +1,4 @@
-require Rails.root.join 'lib/gift_search/amazon'
+require Rails.root.join 'lib/gift_search/all_sites'
 
 class GiftsController < ApplicationController
 
@@ -28,7 +28,7 @@ class GiftsController < ApplicationController
     end
 
     def find_gifts
-      @gifts = GiftSearch::Amazon.new(@gift_keyword).execute
+      @gifts = GiftSearch::AllSites.new(@gift_keyword).execute
     end
 
 end
