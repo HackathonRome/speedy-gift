@@ -28,7 +28,7 @@ class GiftsController < ApplicationController
     end
 
     def find_gifts
-      @gifts = GiftSearch::AllSites.new(@gift_keyword).execute
+      @gifts = @gift_keyword ? GiftSearch::AllSites.new(@gift_keyword).execute : nil
     end
 
 end
