@@ -12,12 +12,6 @@
 - else
 
   %div{style: 'text-align: center'}
-
-  .gift-list= render collection: @gifts, partial: 'gift'
-
-- else
-
-  %div{style: 'text-align: center'}
     %h2
       No gifts for #{@friend.full_name} this year...
       %small.text-muted (searching for "#{@gift_keyword}")
