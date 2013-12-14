@@ -20,7 +20,7 @@ class Friend
     def prepare_keyword(like)
       return nil unless like.present?
 
-      keyword = [like['name'], like['category']].join(' ')
+      keyword = like.values_at('name', 'category').join(' ')
       keyword.gsub!(/[^[:alpha:]]+/, ' ')
     end
 
