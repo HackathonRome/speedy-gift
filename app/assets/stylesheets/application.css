@@ -48,7 +48,7 @@
 #welcome {
   margin: 20px auto;
   width: 500px;
-  height: 500px;
+  min-height: 500px;
   background-color: #fe504f;
   border-radius: 5px;
   text-align: center;
@@ -105,4 +105,17 @@
 .try-again {
   text-align: center;
   margin: 10px auto;
+}
+
+#gift {
+  display: block;
+  text-align: center;
+}
+
+#gift a {
+  color: #333;
+}
+
+#gift img {
+  margin: 0 auto;
 }
