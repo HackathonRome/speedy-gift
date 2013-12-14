@@ -101,3 +101,8 @@
 .gift .price {
   text-align: center;
 }
+
+.try-again {
+  text-align: center;
+  margin: 10px auto;
+}

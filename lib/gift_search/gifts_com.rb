@@ -10,7 +10,7 @@ module GiftSearch
 
     def extract_product_data(node)
       {
-        image_url: node.css('.prodCont img').attr('src').value,
+        image_url: node.css('.prodCont img').attr('src').value if node.css('.prodCont img'),
         url: 'http://gifts.com' + node.css('.prodCont a').attr('href').value,
         title: node.css('.prodName a').text,
         price: node.css('.priceField a').text.split(' at ').first.to_f,
