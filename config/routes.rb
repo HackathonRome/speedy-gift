@@ -3,6 +3,7 @@ Giftz::Application.routes.draw do
 
   get 'registration' => 'user#register', as: :registration
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  get 'friends' => 'welcome#friends', as: :friends
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

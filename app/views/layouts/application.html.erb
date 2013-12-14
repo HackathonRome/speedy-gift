@@ -8,10 +8,14 @@
 </head>
 <body>
 
+<% if current_user.nil? %>
+  <%= link_to "Login", user_omniauth_authorize_url(provider: :facebook) %>
+<% else %>
+  <img src="<%= current_user.image %>" /><%= current_user.name %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% end %>
+
 <%= yield %>
 
-<%= facebook_login %>
-
-<%= link_to "Second", user_omniauth_authorize_url(provider: :facebook) %>
 </body>
 </html>
