@@ -6,9 +6,8 @@ Giftz::Application.routes.draw do
   get 'friends' => 'welcome#friends', as: :friends
   get 'friend/:id' => 'welcome#friend', as: :friend
 
-  resources :gifts, only: [:index] do
-    get :random, on: :collection
-  end
+  get 'gifts/:id' => 'gifts#index', as: 'gifts'
+  get 'random' => 'gifts#random'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
