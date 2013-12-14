@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
     @friend ||= Friend.new(koala, id)
   end
 
-  #private
+  private
 
     def koala
       @koala ||= Koala::Facebook::API.new(oauth_token)

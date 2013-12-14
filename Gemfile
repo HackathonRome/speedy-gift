@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'parallel'
+gem 'mobile-fu'
 
 gem 'sass-rails', '~> 4.0.0'
 

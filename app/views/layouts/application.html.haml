@@ -6,7 +6,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     %link{:href => "../../docs-assets/ico/favicon.png", :rel => "shortcut icon"}/
@@ -16,6 +16,7 @@
     %link{:href => "http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css", :rel => "stylesheet"}/
     / Custom styles for this template
     %link{:href => "jumbotron-narrow.css", :rel => "stylesheet"}/
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     / Just for debugging purposes. Don't actually copy this line!
     /[if lt IE 9] <script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script>
     / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -36,8 +37,9 @@
                 = current_user.name
             %li= link_to "Sign out", destroy_user_session_path, method: :delete
         %h3.text-muted= link_to image_tag('logo.png'), root_path
-      .jumbotron.clearfix
-        .container= yield
-      .footer
+
+      #content= yield
+
+      .footer.clearfix
         %p &copy; KubaCompany 2013
     / /container

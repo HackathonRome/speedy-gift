@@ -15,8 +15,8 @@
  */
 
 .friend {
-  width: 300px;
-  float: left;
+  width: 260px;
+  display: inline-block;
   height: 100px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -26,4 +26,22 @@
 
 .friend img {
   max-height: 80px;
+}
+
+#welcome {
+  margin: 20px auto;
+  width: 500px;
+  height: 500px;
+  background-color: #fe504f;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#welcome.button {
+
+}
+
+#content {
+  display: block;
+  clear: both;
 }
