@@ -1,6 +1,12 @@
 <% @friends.each do |friend| %>
-  <div class="col-md-1" style="">
-    <h3><%= friend["name"] %></h3>
-    <%= link_to "Look for gifts!", gifts_path(friend_id: friend['id']) %>
+  <div class="friend media">
+    <div class="pull-left">
+      <img class="media-object" src="<%= friend['picture']['data']['url'] %>" alt="friend photo" />
+    </div>
+
+    <div class="media-body">
+      <h4 class="media-heading"><%= friend["name"] %></h4>
+      <%= link_to "Look for gifts!", gifts_path(friend_id: friend['id']) %>
+    </div>
   </div>
 <% end %>
