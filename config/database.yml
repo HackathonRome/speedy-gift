@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: giftz_development
+  pool: 25
+  username: admin
+  password: '123456'
+  host: "127.0.0.1"
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: giftz_test<%= ENV['TEST_ENV_NUMBER'] %>
+  pool: 15
+  username: admin
+  password: '123456'
+  host: "127.0.0.1"
