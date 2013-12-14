@@ -1,6 +1,7 @@
 require Rails.root.join 'lib/gift_search/all_sites'
 
 class GiftsController < ApplicationController
+  has_mobile_fu
 
   respond_to :html, :json
 
@@ -9,7 +10,11 @@ class GiftsController < ApplicationController
   before_filter :find_gifts
 
   def index
-    respond_with @gifts
+    if is_mobile_device?
+      redirect_to random_gifts_path(friend_id: params[:friend_id])
+    else
+      respond_with @gifts
+    end
   end
 
   def random
