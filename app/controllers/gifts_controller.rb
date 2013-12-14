@@ -1,4 +1,5 @@
 require Rails.root.join 'lib/gift_search/all_sites'
+require Rails.root.join 'lib/gift_search/gyft'
 
 class GiftsController < ApplicationController
   has_mobile_fu
@@ -20,6 +21,10 @@ class GiftsController < ApplicationController
   def random
     @gift = @gifts.sample
     respond_with @gift
+  end
+  
+  def pippo
+    render text: GiftSearch::Gyft.new(params[:query] || 'apple').execute
   end
 
   private
