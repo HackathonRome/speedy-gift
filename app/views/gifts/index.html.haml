@@ -1,11 +1,10 @@
 - if @gifts.any?
   .page-header
     %h1
-      I've found some gifts
-      %small=@friend.full_name
+      I've found some gifts for #{@friend.full_name}
+      %small.text-muted (searching for "#{@gift_keyword}")
 
-  .gift-list
-    = render collection: @gifts, partial: 'gift'
+  .gift-list= render collection: @gifts, partial: 'gift'
 
 - else
 
