@@ -7,4 +7,10 @@ module ApplicationHelper
                                 )
     link_to "Login", url
   end
+
+  EXCHANGE_RATES = { euro: 1, dollar: 0.728119994 }
+
+  def price_in_euro(gift)
+    gift[:price] * EXCHANGE_RATES[ gift[:currency] ]
+  end
 end

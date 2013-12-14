@@ -14,7 +14,8 @@ module GiftSearch
         url: node.css('.newaps a').attr('href').value,
         title: node.css('.newaps a span').text,
         price: node.css('.newp a span').text.scan(/((\d+)\.(\d+))/).flatten.first.to_f,
-        source: :amazon
+        source: :amazon,
+        currency: :dollar
       }
     end
 

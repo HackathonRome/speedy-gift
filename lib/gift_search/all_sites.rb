@@ -1,6 +1,7 @@
 require 'parallel'
 require_relative 'amazon'
 require_relative 'gifts_com'
+require_relative 'pixmania'
 
 module GiftSearch
   class AllSites < Base
@@ -16,7 +17,7 @@ module GiftSearch
     end
 
     def searches
-      [Amazon, GiftsCom].map { |klass| klass.new(@query) }
+      [Amazon, GiftsCom, Pixmania].map { |klass| klass.new(@query) }
     end
   end
 end

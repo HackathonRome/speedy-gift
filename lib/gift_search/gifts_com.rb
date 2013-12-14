@@ -14,7 +14,8 @@ module GiftSearch
         url: 'http://gifts.com' + node.css('.prodCont a').attr('href').value,
         title: node.css('.prodName a').text,
         price: node.css('.priceField a').text.split(' at ').first.to_f,
-        source: :gifts_com
+        source: :gifts_com,
+        currency: :dollar
       }
     end
 
