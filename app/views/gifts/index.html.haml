@@ -1,3 +1,12 @@
-%h2 Searching for "#{@gift_keyword}"
 
-= render collection: @gifts, partial: 'gift'
+- if @gifts
+  %h3 I've found some gifts for #{@friend.full_name}
+
+  = render collection: @gifts, partial: 'gift'
+
+- else
+  %div{style: 'text-align: center'}
+    %h2 No gifts for #{@friend.full_name} this year...
+    %div= image_tag asset_path('drunk-santa.jpg')
+    Please
+    = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-large btn-success'

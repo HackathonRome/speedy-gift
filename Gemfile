@@ -8,6 +8,7 @@ gem 'ruby_parser'
 gem 'sqlite3'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'parallel'
 
 gem 'sass-rails', '~> 4.0.0'
 

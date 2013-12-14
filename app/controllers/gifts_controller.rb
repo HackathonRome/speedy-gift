@@ -1,11 +1,13 @@
-require Rails.root.join 'lib/gift_search/amazon'
+require Rails.root.join 'lib/gift_search/all_sites'
 require Rails.root.join 'lib/gift_search/gyft'
 
 class GiftsController < ApplicationController
+
   respond_to :html, :json
-  before_filter :load_friend, except: :pippo
-  before_filter :load_gift_keyword, except: :pippo
-  before_filter :find_gifts, except: :pippo
+
+  before_filter :load_friend
+  before_filter :load_gift_keyword
+  before_filter :find_gifts
 
   def index
     respond_with @gifts
@@ -21,6 +23,7 @@ class GiftsController < ApplicationController
   end
 
   private
+
     def load_friend
       @friend = current_user.friend(params[:friend_id])
     end
@@ -30,6 +33,7 @@ class GiftsController < ApplicationController
     end
 
     def find_gifts
-      @gifts = GiftSearch::Amazon.new(@gift_keyword).execute
+      @gifts = GiftSearch::AllSites.new(@gift_keyword).execute
     end
+
 end

@@ -7,18 +7,23 @@ class Friend
     @koala = koala
   end
 
+  def full_name
+    request.fetch('name')
+  end
+
   def likes
-    @likes ||= @koala.get_connections(@id, 'likes')
+    @likes ||= request.fetch('likes', {}).fetch('data', nil)
+  end
+
+  def request
+    @data ||= @koala.get_connections(@id, '?fields=id,name,likes.limit(100).fields(talking_about_count,name,likes)')
   end
 
   def gift_keyword
-    like = likes.sample
+    return nil if likes.nil?
 
-    keyword = ""
-    keyword << like['name']
-    keyword << " "
-    keyword << like['category']
-    keyword.gsub!(/[^[:alpha:]]+/, " ")
-    keyword
+    filter = LikeFilter.new(likes)
+    filter.get_keyword
   end
+
 end

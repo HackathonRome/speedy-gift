@@ -1,2 +1,2 @@
 %h2 Searching for "#{@gift_keyword}"
-= render partial: 'gift', object: @gift
+= render partial: 'gift', locals: { gift: @gift }
