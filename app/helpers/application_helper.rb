@@ -11,6 +11,8 @@ module ApplicationHelper
   EXCHANGE_RATES = { euro: 1, dollar: 0.728119994 }
 
   def price_in_euro(gift)
+    return nil unless gift[:price].present?
+
     in_euros = gift[:price] * EXCHANGE_RATES[ gift[:currency] ]
 
     number_to_currency in_euros, precision: 2,

@@ -1,12 +1,22 @@
-
 - if @gifts.present?
-  %h3 I've found some gifts for #{@friend.full_name}
+  .page-header
+    %h1
+      I've found some gifts for #{@friend.full_name}
+      %small.text-muted (searching for "#{@gift_keyword}")
+
+  .clearfix.try-again
+    = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-lg btn-success mind-blown'
 
   .gift-list= render collection: @gifts, partial: 'gift'
 
 - else
+
   %div{style: 'text-align: center'}
-    %h2 No gifts for #{@friend.full_name} this year...
+    %h2
+      No gifts for #{@friend.full_name} this year...
+      %small.text-muted (searching for "#{@gift_keyword}")
+
     %div= image_tag asset_path('drunk-santa.jpg')
-    Please
-    = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-large btn-success'
+    .try-again
+      Please
+      = link_to "Try again!", gifts_path(friend_id: params[:friend_id]), class: 'btn btn-lg btn-success mind-blown'
