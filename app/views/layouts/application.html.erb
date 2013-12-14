@@ -36,7 +36,7 @@
       <% if current_user.nil? %>
         <li><%= link_to "Login", user_omniauth_authorize_url(provider: :facebook) %></li>
       <% else %>
-        <li><img height="26" src="<%= current_user.image %>" /><%= current_user.name %></li>
+        <li><a href="#"><img height="24" src="<%= current_user.image %>" /> <%= current_user.name %></a></li>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
       <% end %>
     </ul>
@@ -48,11 +48,5 @@
   <div class="footer">
     <p>&copy; Company 2013</p>
   </div>
-
 </div> <!-- /container -->
-
-
-<!-- Bootstrap core JavaScript
-                                                                                                        ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 </body>
