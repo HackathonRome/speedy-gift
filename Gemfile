@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 
+gem 'haml-rails'
+gem 'hpricot'
+gem 'ruby_parser'
 gem 'sqlite3'
 gem 'devise'
 gem 'omniauth-facebook'
