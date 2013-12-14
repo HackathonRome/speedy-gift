@@ -7,11 +7,7 @@ module GiftSearch
     def execute
       searches = self.searches
 
-      results = Parallel.map(searches, in_threads: searches.count) do |search|
-        search.execute
-      end
-
-      results.flatten
+      Parallel.map(searches, in_threads: searches.count, &:execute).flatten
     end
 
     def searches
