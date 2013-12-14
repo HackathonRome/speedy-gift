@@ -3,6 +3,7 @@ require Rails.root.join 'lib/gift_search/amazon'
 class GiftsController < ApplicationController
   respond_to :html, :json
   before_filter :load_friend
+  before_filter :load_gift_keyword
   before_filter :find_gifts
 
   def index
@@ -19,7 +20,11 @@ class GiftsController < ApplicationController
       @friend = current_user.friend(params[:friend_id])
     end
 
+    def load_gift_keyword
+      @gift_keyword = @friend.gift_keyword
+    end
+
     def find_gifts
-      @gifts = GiftSearch::Amazon.new(@friend.gift_keyword).execute
+      @gifts = GiftSearch::Amazon.new(@gift_keyword).execute
     end
 end
