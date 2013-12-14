@@ -204,6 +204,7 @@ DEPENDENCIES
   koala (~> 1.8.0rc1)
   nokogiri
   omniauth-facebook
+  parallel
   pry-rails
   rails (= 4.0.2)
   ruby_parser
