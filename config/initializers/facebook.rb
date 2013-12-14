@@ -1,4 +1,4 @@
-if RAILS_ENV.production?
+if Rails.env.development?
   FACEBOOK_APP_ID = '511834635582085'
   FACEBOOK_APP_SECRET = '62e98615e0bebe75e074b4227d636d37'
 else
