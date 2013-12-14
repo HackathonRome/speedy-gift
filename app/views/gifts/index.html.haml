@@ -1,6 +1,8 @@
 
 - if @gifts.present?
-  %h3 I've found some gifts for #{@friend.full_name}
+  %h2
+    I've found some gifts for #{@friend.full_name}
+    %small.text-muted (searching for "#{@gift_keyword}")
 
   .gift-list= render collection: @gifts, partial: 'gift'
 
