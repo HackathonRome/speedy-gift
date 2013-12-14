@@ -110,10 +110,19 @@
 #gift {
   display: block;
   text-align: center;
+  margin: 50px auto;
+  width: 500px;
+  background-color: #fe504f;
+  border-radius: 5px;
+  padding: 20px 50px;
 }
 
 #gift a {
-  color: #333;
+  color: #fff;
+}
+
+#gift a:hover {
+  text-decoration: none;
 }
 
 #gift img {

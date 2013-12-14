@@ -4,14 +4,13 @@
       = "I've found special gift for #{@friend.full_name}"
       %small.text-muted= "(searching for '#{@gift_keyword}')"
 
-  #welcome
-    = image_tag 'logo_home.png'
-
     #gift
       %a{ href: @gift[:url] }
         %h4= @gift[:title]
         %img{ src: @gift[:image_url], class: 'thumbnail' }
         .price= price_in_euro @gift
+
+  %h3 Shake it to find another gift!
 
   %script{ type: "text/javascript", src: asset_path('shake.js') }
   %script{ type: "text/javascript", src: asset_path('reloadGift.js') }
