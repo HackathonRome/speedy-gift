@@ -16,7 +16,14 @@ class Friend
   end
 
   def request
-    @data ||= @koala.get_connections(@id, '?fields=id,name,likes.limit(100).fields(talking_about_count,name,likes)')
+    @request = Rails.cache.read("friend_#{id}")
+
+    unless @request
+      @request = @koala.get_connections(@id, '?fields=id,name,likes.limit(100).fields(talking_about_count,name,likes)')
+      Rails.cache.write("friend_#{id}", @request)
+    end
+
+    @request
   end
 
   def gift_keyword
