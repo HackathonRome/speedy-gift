@@ -27,3 +27,13 @@
 .friend img {
   max-height: 80px;
 }
+
+.gift {
+  width: 25%;
+}
+.gift img {
+  display: block;
+}
+.gift .price {
+  text-align: center;
+}
