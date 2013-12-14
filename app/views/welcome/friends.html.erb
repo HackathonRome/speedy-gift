@@ -1,5 +1,6 @@
 <% @friends.each do |friend| %>
   <div class="col-md-1" style="">
-    <%= friend["name"] %>
+    <h3><%= friend["name"] %></h3>
+    <%= link_to "Look for gifts!", gifts_path(friend_id: friend['id']) %>
   </div>
 <% end %>
