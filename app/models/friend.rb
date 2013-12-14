@@ -8,20 +8,17 @@ class Friend
   end
 
   def likes
-    @likes ||= @koala.get_connections(@id, 'likes')
+    @likes ||= request
+  end
+
+  def request
+    data = @koala.get_connections(@id, '?fields=id,name,likes.limit(100).fields(talking_about_count,name,likes)')
+    data.fetch('likes').fetch('data')
   end
 
   def gift_keyword
-    prepare_keyword(likes.sample)
+    filter = LikeFilter.new(likes)
+    filter.get_keyword
   end
-
-  private
-
-    def prepare_keyword(like)
-      return nil unless like.present?
-
-      keyword = [like['name'], like['category']].join(' ')
-      keyword.gsub!(/[^[:alpha:]]+/, ' ')
-    end
 
 end
