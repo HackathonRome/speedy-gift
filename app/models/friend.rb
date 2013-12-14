@@ -12,7 +12,13 @@ class Friend
   end
 
   def gift_keyword
-    likes.sample['name']
-  end
+    like = likes.sample
 
+    keyword = ""
+    keyword << like['name']
+    keyword << " "
+    keyword << like['category']
+    keyword.gsub!(/[^[:alpha:]]+/, " ")
+    keyword
+  end
 end
