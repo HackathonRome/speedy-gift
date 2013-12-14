@@ -1,9 +1,14 @@
+.page-header
+  %h1
+    Choose friend
+    %small what gift you should buy
+
 - @friends.each do |friend|
   .friend.media
     .pull-left
       %img.media-object.img-thumbnail{:alt => "friend photo", :src => friend['picture']['data']['url']}/
     .media-body
       %h4.media-heading= friend["name"]
-      %a.btn.btn-success{:href => gifts_path(friend_id: friend['id'])}
+      %a.btn.btn-success{ href: gifts_path(friend_id: friend['id']) }
         %span.glyphicon.glyphicon-heart
         Look for gifts!

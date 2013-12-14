@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'parallel'
+gem 'mobile-fu'
 
 gem 'sass-rails', '~> 4.0.0'
 
@@ -27,5 +28,9 @@ gem "koala", "~> 1.8.0rc1"
 gem 'nokogiri'
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
   gem 'pry-rails'
 end
