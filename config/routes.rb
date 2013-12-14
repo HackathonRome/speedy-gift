@@ -5,6 +5,8 @@ Giftz::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'friends' => 'welcome#friends', as: :friends
 
+  resources :gifts, only: [:index]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
