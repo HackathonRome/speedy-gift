@@ -12,13 +12,16 @@ class Friend
   end
 
   def gift_keyword
-    like = likes.sample
-
-    keyword = ""
-    keyword << like['name']
-    keyword << " "
-    keyword << like['category']
-    keyword.gsub!(/[^[:alpha:]]+/, " ")
-    keyword
+    prepare_keyword(likes.sample)
   end
+
+  private
+
+    def prepare_keyword(like)
+      return nil unless like.present?
+
+      keyword = [like['name'], like['category']].join(' ')
+      keyword.gsub!(/[^[:alpha:]]+/, ' ')
+    end
+
 end
