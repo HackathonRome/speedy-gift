@@ -1,8 +1,8 @@
 
-- if @gifts
+- if @gifts.present?
   %h3 I've found some gifts for #{@friend.full_name}
 
-  = render collection: @gifts, partial: 'gift'
+  .gift-list= render collection: @gifts, partial: 'gift'
 
 - else
   %div{style: 'text-align: center'}
