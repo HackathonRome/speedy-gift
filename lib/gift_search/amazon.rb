@@ -13,10 +13,16 @@ module GiftSearch
         image_url: node.css('.image a img').attr('src').value,
         url: node.css('.newaps a').attr('href').value,
         title: node.css('.newaps a span').text,
-        price: node.css('.newp a span').text.scan(/((\d+)\.(\d+))/).flatten.first.to_f,
+        price: price_for_node(node),
         source: :amazon,
         currency: :dollar
       }
+    end
+
+    def price_for_node(node)
+      node.css('.digp a, .newp a').map do |e|
+        e.text.scan(/((\d+)\.(\d+))/).flatten.first.to_f
+      end.flatten.compact.min
     end
 
     def html
