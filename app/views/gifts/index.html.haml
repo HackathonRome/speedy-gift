@@ -1,10 +1,14 @@
+- if @gifts.any?
+  .page-header
+    %h1
+      I've found some gifts
+      %small=@friend.full_name
 
-- if @gifts.present?
-  %h3 I've found some gifts for #{@friend.full_name}
-
-  .gift-list= render collection: @gifts, partial: 'gift'
+  .gift-list
+    = render collection: @gifts, partial: 'gift'
 
 - else
+
   %div{style: 'text-align: center'}
     %h2 No gifts for #{@friend.full_name} this year...
     %div= image_tag asset_path('drunk-santa.jpg')

@@ -1,4 +1,5 @@
-%a.gift{href: gift[:url]}
-  %h4= truncate gift[:title], length: 60
-  %img{:src => gift[:image_url]}/
-  .price= price_in_euro gift
+.gift
+  %a{ href: gift[:url] }
+    %h4= truncate gift[:title], length: 60
+    %img{ :src => gift[:image_url] }
+    .price= price_in_euro gift
