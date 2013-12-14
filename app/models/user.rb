@@ -24,9 +24,14 @@ class User < ActiveRecord::Base
     koala.get_connections('me', 'friends')
   end
 
+  def friend(id)
+    @friend ||= Friend.new(koala, id)
+  end
+
   private
 
-  def koala
-    @koala ||= Koala::Facebook::API.new(oauth_token)
-  end
+    def koala
+      @koala ||= Koala::Facebook::API.new(oauth_token)
+    end
+
 end
